@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">  
+        <script type="text/javascript" src="js/jquery.js"></script>            
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>   
+        <script type="text/javascript" src="js/soundAnalyzer.js"></script>   
+        <title>Hello World</title>
+    </head>
+    <body>
+        <!--
+        <div class="app">
+            <h1>Apache Cordova</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+        </div>
+        -->
+        <div data-role="page" id="home">
+
+            <div data-role="panel" id="rightPanel" data-position="right" data-display="overlay">
+
+                <a href="#rightPanel" class="ui-btn ui-btn-right ui-corner-all ui-btn-icon-notext ui-icon-carat-r">Back</a>
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="theme-selector">
+                    <legend>Main theme:</legend>
+                    <input name="themeradio" id="a" value="light" type="radio">
+                    <label for="a">Light</label>
+                    <input name="themeradio" id="b" value="dark" type="radio">
+                    <label for="b">Dark</label>
+                </fieldset>
+    
+            </div>       
+    
+                         
+            <div data-role="popup" id="popupCloseRight" class="ui-content">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <div id="bothratio">
+                    <label for="bothratioslider">View ratio:</label>
+                    <input type="range" id="bothratioslider" data-highlight="true" min="10" max="90" value="40">
+                </div>    
+                <div id="smoothing">
+                    <label for="smoothingslideer">Smoothing:</label>
+                    <input type="range" id="smoothingslideer" data-highlight="true" min="0" max="1" value="0.5" step="0.01" >
+                </div>       
+                <div id="decibels">
+                    <div data-role="rangeslider">
+                        <label for="range-min">Decibels:</label>
+                        <input type="range" name="range-min" id="range-min" min="-100" max="0" value="-40">
+                        <label for="range-max">Decibels:</label>
+                        <input type="range" name="range-max" id="range-max" min="-100" max="0" value="-10">
+                    </div>                         
+                </div>              
+            </div>
+
+
+                                    
+            <div data-role="header" data-position="fixed">
+
+                <a href="#rightPanel" class="ui-btn ui-btn-right ui-corner-all ui-btn-icon-notext ui-icon-gear">Menu</a>
+            </div>
+
+            <div data-role="content" id="myContent" style="padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 10px;">
+
+
+               
+            </div>
+
+            <div data-role="footer" class="ui-bar">
+                <div class="left">
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="view-selector">
+                    <input name="viewradio" id="viewboth" value="Both" type="radio">
+                    <label for="viewboth">Both</label>                        
+                    <input name="viewradio" id="viewvawe" value="Vawe" type="radio">
+                    <label for="viewvawe">Vawe</label>
+                    <input name="viewradio" id="viewspectrum" value="Spectrum" type="radio">
+                    <label for="viewspectrum">Spectrum</label>                        
+                    <input name="viewradio" id="view3d" value="3D" type="radio">
+                    <label for="view3d">3D</label>     
+                
+                </fieldset>   
+                </div>   
+                <div class="right">
+                        <a href="#popupCloseRight" data-rel="popup" data-transition="pop" class="ui-btn ui-corner-all ui-btn-icon-notext ui-icon-edit">Menu</a>
+                </div>
+            </div>      
+     
+        </div>
+ 
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/rgb.js"></script>          
+    </body>
+</html>

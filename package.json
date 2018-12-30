@@ -1,0 +1,22 @@
+{
+  "name": "soundanalyzer",
+  "version": "1.0.0",
+  "description": "Sound analyzer",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyberbrun/sa.git"
+  },
+  "author": "Bruno Szymkowiak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cyberbrun/sa/issues"
+  },
+  "homepage": "https://github.com/cyberbrun/sa#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

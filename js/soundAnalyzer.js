@@ -617,8 +617,10 @@ jQuery._sndAnalyzer = function (container) {
 
     initMic = function() {
 
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        audioCtx = new (window.audioContext || window.AudioContext || window.AudioContext || window.webkitAudioContext)();
         analyser = audioCtx.createAnalyser();
+
+        audioCtx.resume();
 //        analyser.minDecibels = -90;
 //        analyser.maxDecibels = -10;
         analyser.smoothingTimeConstant = 0.0;

@@ -18,15 +18,15 @@
 
 // led strip basic integration
 
-jQuery.fn.fttVisualizer = function (gradientContainer) {
-    $.fttVisualizer(this, gradientContainer);
-    return this;
-};
+// jQuery.fn.fttVisualizer = function (gradientContainer) {
+//     $.fttVisualizer(this, gradientContainer);
+//     return this;
+// };
 
-jQuery.fttVisualizer = function (container, gradientContainer) {
-    var container = $(container).get(0);
-    return container.fttVisualizer || (container.fttVisualizer = new jQuery._fttVisualizer(container, gradientContainer));
-  }
+// jQuery.fttVisualizer = function (container, gradientContainer) {
+//     var container = $(container).get(0);
+//     return container.fttVisualizer || (container.fttVisualizer = new jQuery._fttVisualizer(container, gradientContainer));
+//   }
   
 
 jQuery._fttVisualizer = function (container, gradientContainer) {
